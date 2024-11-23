@@ -1,0 +1,34 @@
+.timezone-selector {
+    display: flex;
+    justify-content: left;
+}
+
+.timetable-container {
+    display: flex;
+    justify-content: left;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.timetable-container table {
+    margin: 2.5rem;
+}
+
+.timetable-container th {
+    width: 10rem;
+}
+
+#timetable-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#timetable-table th, #timetable-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#timetable-table th {
+    background-color: #f0f0f0;
+}
