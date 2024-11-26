@@ -1,6 +1,19 @@
+#title {
+    text-align: center;
+}
+
 .timezone-selector {
     display: flex;
-    justify-content: left;
+    justify-content: center;
+}
+
+.timezone-selector label {
+    font-size: 32;
+    font-weight: bold;
+}
+
+.timezone-selector select {
+    margin-left: 1rem;
 }
 
 .timetable-container {
