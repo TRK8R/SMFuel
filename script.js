@@ -16,20 +16,18 @@ function updateTimezone() {
   const selectedTz = tzSelect.value;
   timeOffset = Number(selectedTz);
   // Update the timezone variable here
-  console.log(`Selected Time Zone: ${selectedTz}`);
-  console.log(`Time Offset: ${timeOffset}`);
   displayData()
 }
 
-//Function to write the data to the tables on index.html
+//Function to sort data by time zone and then write the sorted data to the tables on index.html
 function displayData() {
   const dom = getCurrentDay();
   const todayTable = document.getElementById("timetableToday")
   const tomorrowTable = document.getElementById("timetableTomorrow")
   const twoDayTable = document.getElementById("timetable2Days")
   let t = timeOffset * -2
-  console.log(t);
-  console.log(48 + t)
+  //console.log(t);
+  //console.log(48 + t)
   for (let i = 2; i< 50; i++) {
     if (t < 0) {
       todayTable.rows[i].cells[1].innerHTML = SMFD[(dom *2) -3][48 + t];
@@ -38,7 +36,7 @@ function displayData() {
       tomorrowTable.rows[i].cells[2].innerHTML = SMFD[(dom *2)][48 + t];
       twoDayTable.rows[i].cells[1].innerHTML = SMFD[(dom *2) +1][48 + t];
       twoDayTable.rows[i].cells[2].innerHTML = SMFD[(dom *2) +2][48 + t];
-    } else { if (t > 48) {
+    } else { if (t > 47) {
       todayTable.rows[i].cells[1].innerHTML = SMFD[(dom *2) +1][t - 48];
       todayTable.rows[i].cells[2].innerHTML = SMFD[(dom *2) +2][t - 48];
       tomorrowTable.rows[i].cells[1].innerHTML = SMFD[(dom *2) +3][t - 48];
@@ -53,8 +51,7 @@ function displayData() {
       twoDayTable.rows[i].cells[1].innerHTML = SMFD[(dom *2) +3][t];
       twoDayTable.rows[i].cells[2].innerHTML = SMFD[(dom *2) +4][t];
     }};
-      //todayTable.rows[i].cells[1].innerHTML = SMFD[(dom *2) -1][i-2];
-      //todayTable.rows[i].cells[2].innerHTML = SMFD[(dom *2)][i-2];
+    // Adding background and font color based on cell data
     if (todayTable.rows[i].cells[1].innerHTML < 499) {
       todayTable.rows[i].cells[1].style.background = "green";
       todayTable.rows[i].cells[1].style.color = "white";
@@ -140,11 +137,7 @@ function displayData() {
         twoDayTable.rows[i].cells[2].style.color = "white";
       }}}
       t = t +1
-  }  
-  console.log(SMFD[(dom * 2) - 1][0])
-  console.log(SMFD[(dom * 2)][0])
-  console.log('length')
-  console.log(SMFD[(dom * 2) -1].length)
+  }
 }
 
 
