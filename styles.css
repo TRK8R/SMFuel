@@ -18,15 +18,18 @@
     width: 10rem;
 }
 
-#timetable-table {
+.timetable-table {
     border-collapse: collapse;
     width: 100%;
+    text-align: center;
 }
 
-#timetable-table th, #timetable-table td {
-    border: 1px solid #ddd;
+.timetable-table th, .timetable-table td {
+    border: 2px solid #000;
     padding: 8px;
-    text-align: left;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bolder;
 }
 
 #timetable-table th {
