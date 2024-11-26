@@ -22,9 +22,10 @@ function updateTimezone() {
 //Function to sort data by time zone and then write the sorted data to the tables on index.html
 function displayData() {
   const dom = getCurrentDay();
-  const todayTable = document.getElementById("timetableToday")
-  const tomorrowTable = document.getElementById("timetableTomorrow")
-  const twoDayTable = document.getElementById("timetable2Days")
+  const todayTable = document.getElementById("timetableToday");
+  const tomorrowTable = document.getElementById("timetableTomorrow");
+  const twoDayTable = document.getElementById("timetable2Days");
+  //tzSelect.value = selectedTz;
   let t = timeOffset * -2
   //console.log(t);
   //console.log(48 + t)
@@ -138,6 +139,11 @@ function displayData() {
       }}}
       t = t +1
   }
+}
+
+function init() {
+  updateTimezone();
+  displayData();
 }
 
 
